@@ -1,0 +1,14 @@
+==== Frontline ====
+
+A game.
+
+==== Building and Running ====
+
+Navigate to the root directory of the application and run 'make all.'  Then
+do './frontline.exe' (Alternatively, you can do 'make run').
+
+==== Testing ====
+
+Frontline uses the Google Mock and Google Test frameworks.  To run tests,
+install Google Mock on your system and adjust frontline/test/MakeFile
+accordingly.

@@ -1,0 +1,20 @@
+1. Short-Term
+ A. Units
+   * Generic Class for a unit
+   * Specific units:
+     * Unique class for each that inherits from general
+     * File that contains the necessary info for each unit, no specific classes
+       (already flawed cause some units have different movement types)
+   * Unique sub-classes, like for land, air, and sea
+ B. Board
+   * Zone Class (a square on the board)
+ C. Combat
+   * Battle class (takes two or more units)
+     * Responsible for doing the rolling and moving through the stages 
+ D. Movement
+   * Breadth-First Search through the zones, starting at a unit's current
+     location.  Zones will have to know their neighbors.
+
+2. Long-Term
+ A. Animation
+ B. Networking
