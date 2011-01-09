@@ -9,19 +9,19 @@ class Unit {
         int ipcCost;
 
     // Constructor
-    public: Unit (int, int, int, int);
+    public: Unit(int, int, int, int);
 
     // Public Interface
     public:
         // Getters
-        int getMovementRange ();
-        int getAttackRating ();
-        int getDefenseRating ();
-        int getIPCCost ();
+        int getMovementRange();
+        int getAttackRating();
+        int getDefenseRating();
+        int getIPCCost();
 
         // Other
-        int attack ();
-        int defend ();
+        int attack(int);
+        int defend(int);
 };
 
 #endif
