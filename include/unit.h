@@ -2,13 +2,26 @@
 #define UNIT_H
 
 class Unit {
-    public:
-	int movementRange;
-	int attackRating;
-	int defenseRating;
-	int ipcCost;
+    protected:
+        int movementRange;
+        int attackRating;
+        int defenseRating;
+        int ipcCost;
 
-	int move(int);
+    // Constructor
+    public: Unit (int, int, int, int);
+
+    // Public Interface
+    public:
+        // Getters
+        int getMovementRange ();
+        int getAttackRating ();
+        int getDefenseRating ();
+        int getIPCCost ();
+
+        // Other
+        int attack ();
+        int defend ();
 };
 
 #endif

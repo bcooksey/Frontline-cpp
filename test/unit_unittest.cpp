@@ -1,13 +1,22 @@
 #include <gtest/gtest.h>
 #include "unit.h"
 
-class UnitTest : public testing::Test {
-    protected:
-	Unit u;
+//class UnitTest : public testing::Test {
+//    public: UnitTest () {};
+//    protected:
+//        virtual void SetUp() {
+//            u1 = Unit(1, 1, 2, 3);
+//        }
 
-};	
+//        Unit u;
 
-TEST_F(UnitTest, FirstTest) {
+//    Unit u1;
+//};	
 
-    EXPECT_EQ( 1, u.move(3) );
+TEST(UnitTest, Constructor) {
+    Unit u(1, 2, 3, 4);
+    EXPECT_EQ( 1, u.getMovementRange() );
+    EXPECT_EQ( 2, u.getAttackRating() );
+    EXPECT_EQ( 3, u.getDefenseRating() );
+    EXPECT_EQ( 4, u.getIPCCost() );
 }

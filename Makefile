@@ -21,6 +21,11 @@ SOURCES = main.cpp
 LIBS = 
 
 ########################################################
+# Included directories
+#
+INCLUDES = -I/. -I./include
+
+########################################################
 # Make rules
 #
 OBJECTS = $(addsuffix .o, $(basename $(SOURCES)))

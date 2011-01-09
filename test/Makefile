@@ -83,8 +83,8 @@ gmock.a : gmock-all.o gtest-all.o
 gmock_main.a : gmock-all.o gtest-all.o gmock_main.o
 	$(AR) $(ARFLAGS) $@ $^
 
-# Builds a sample test.  A test should link with either gtest.a or
-# gtest_main.a, depending on whether it defines its own main()
+# Builds a sample test.  A test should link with either gmock.a or
+# gmock_main.a, depending on whether it defines its own main()
 # function.
 
 unit.o : $(USER_DIR)/src/unit.cpp $(USER_DIR)/include/unit.h $(GMOCK_HEADERS)
