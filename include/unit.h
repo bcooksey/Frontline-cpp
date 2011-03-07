@@ -6,7 +6,7 @@ class Unit {
         int movementRange;
         int attackRating;
         int defenseRating;
-        int ipcCost;
+        int supplyCost;
 
     // Constructor
     public: Unit(int, int, int, int);
@@ -17,7 +17,7 @@ class Unit {
         int getMovementRange();
         int getAttackRating();
         int getDefenseRating();
-        int getIPCCost();
+        int getSupplyCost();
 
         // Other
         int attack(int);

@@ -1,18 +1,18 @@
 #include "unit.h"
 
 // Constructor
-Unit::Unit(int movementRange, int attackRating, int defenseRating, int ipcCost) {
+Unit::Unit(int movementRange, int attackRating, int defenseRating, int supplyCost) {
     this->movementRange = movementRange;
     this->attackRating  = attackRating;
     this->defenseRating = defenseRating;
-    this->ipcCost       = ipcCost;
+    this->supplyCost       = supplyCost;
 }
 
 // Getters
 int Unit::getMovementRange() { return movementRange; }
 int Unit::getAttackRating() { return attackRating; }
 int Unit::getDefenseRating() { return defenseRating; }
-int Unit::getIPCCost() { return ipcCost; }
+int Unit::getSupplyCost() { return supplyCost; }
 
 /* Function: attack
  * Pre: result of a dice roll, an int

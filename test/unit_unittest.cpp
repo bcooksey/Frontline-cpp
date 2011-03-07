@@ -18,7 +18,7 @@ TEST(Unit, Constructor) {
     EXPECT_EQ( 1, u.getMovementRange() );
     EXPECT_EQ( 2, u.getAttackRating() );
     EXPECT_EQ( 3, u.getDefenseRating() );
-    EXPECT_EQ( 4, u.getIPCCost() );
+    EXPECT_EQ( 4, u.getSupplyCost() );
 }
 
 TEST(Unit, Combat) {
