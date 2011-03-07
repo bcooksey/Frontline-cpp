@@ -2,9 +2,7 @@
 #define ZONE_H
 
 #include "unit.h"
-
-enum zoneType { LAND, SEA, IMPASSIBLE };
-enum power { GERMANY, JAPAN, USSR, BRITIAN, US };
+#include "globals.h"
 
 class Zone {
     protected:
@@ -13,22 +11,24 @@ class Zone {
         power nativePower;
         power controllingPower; 
         Unit *occupyingUnits;
-        int neighboringZones[];
+        int* neighboringZones;
 
 
     // Constructors
     // The empty constructor is to get the test fixture running
     // Trying to pass parameters to the declaration gave compile-time errors
     public: Zone(); 
-    public: Zone(Unit*, int[], int, zoneType, power, power);
-//    public: Zone(int, int, int, zoneType, power, power);
+    public: Zone(Unit*, int*, int, zoneType, power, power);
 
     // Public Interface
     public:
         // Getters
         int getSupplyValue();
-//        int getOccupyingUnits();
+        Unit* getOccupyingUnits();
         int* getNeighboringZones();
+        zoneType getZoneType();
+        power getNativePower();
+        power getControllingPower();
 
 //        int addUnit();
 //        int removeUnit();

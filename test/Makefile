@@ -28,7 +28,7 @@ CXXFLAGS += -g -Wall -Wextra
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = unit_unittest
+TESTS = unit_unittest zone_unittest
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -95,4 +95,14 @@ unit_unittest.o : $(USER_DIR)/test/unit_unittest.cpp \
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/test/unit_unittest.cpp
 
 unit_unittest : unit.o unit_unittest.o gmock_main.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
+
+zone.o : $(USER_DIR)/src/zone.cpp $(USER_DIR)/include/zone.h $(GMOCK_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/src/zone.cpp
+
+zone_unittest.o : $(USER_DIR)/test/zone_unittest.cpp \
+                     $(USER_DIR)/include/zone.h $(GMOCK_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/test/zone_unittest.cpp
+
+zone_unittest : zone.o zone_unittest.o gmock_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
