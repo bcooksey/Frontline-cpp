@@ -18,3 +18,15 @@ int* Zone::getNeighboringZones() { return neighboringZones; }
 zoneType Zone::getZoneType() { return type; }
 power Zone::getNativePower() { return nativePower; }
 power Zone::getControllingPower() { return controllingPower; }
+
+int Zone::addOccupyingUnits( Unit *newUnits ) {
+//    int bytes = sizeof(Unit);
+//    int currentSize = sizeof(occupyingUnits) / bytes;
+//    int additionalSize = sizeof(newUnits) / bytes;
+//    Unit* newArray = new Unit [ currentSize + additionalSize ];
+//    newArray = this->occupyingUnits;
+
+    test.push_back( newUnits[0] );
+//    newArray
+    return 1;
+}

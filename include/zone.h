@@ -3,6 +3,8 @@
 
 #include "unit.h"
 #include "globals.h"
+#include <vector>
+using namespace std;
 
 class Zone {
     protected:
@@ -10,7 +12,8 @@ class Zone {
         zoneType type;
         power nativePower;
         power controllingPower; 
-        Unit *occupyingUnits;
+        vector<Unit> test;
+        Unit* occupyingUnits;
         int* neighboringZones;
 
 
@@ -30,8 +33,9 @@ class Zone {
         power getNativePower();
         power getControllingPower();
 
-//        int addUnit();
-//        int removeUnit();
+    public:
+        int addOccupyingUnits( Unit* );
+        int setOccupyingUnits();
 };
 
 #endif

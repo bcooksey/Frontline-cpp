@@ -27,3 +27,16 @@ TEST_F(ZoneTest, Constructor) {
     EXPECT_EQ( USSR, z1.getNativePower() );
     EXPECT_EQ( GERMANY, z1.getControllingPower() );
 }
+
+TEST_F(ZoneTest, UnitSetting) {
+    Unit u1(1, 1, 1, 1);
+    Unit u2(2, 2, 2, 2); 
+    
+    // Sanity check
+    EXPECT_EQ( NULL, z1.getOccupyingUnits() );
+
+    z1.addOccupyingUnits( &u1 );
+    Unit* gotUnits = z1.getOccupyingUnits();
+    // To make this work, I have to define the == operator on the unit class
+//    EXPECT_EQ( &u1, gotUnits[0]); 
+}

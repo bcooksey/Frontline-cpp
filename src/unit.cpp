@@ -5,7 +5,7 @@ Unit::Unit(int movementRange, int attackRating, int defenseRating, int supplyCos
     this->movementRange = movementRange;
     this->attackRating  = attackRating;
     this->defenseRating = defenseRating;
-    this->supplyCost       = supplyCost;
+    this->supplyCost    = supplyCost;
 }
 
 // Getters

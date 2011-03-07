@@ -104,5 +104,5 @@ zone_unittest.o : $(USER_DIR)/test/zone_unittest.cpp \
                      $(USER_DIR)/include/zone.h $(GMOCK_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/test/zone_unittest.cpp
 
-zone_unittest : zone.o zone_unittest.o gmock_main.a
+zone_unittest : zone.o zone_unittest.o gmock_main.a unit.o
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
