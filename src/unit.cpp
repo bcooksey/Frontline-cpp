@@ -25,3 +25,10 @@ int Unit::attack(int roll) {
 int Unit::defend(int roll) {
     return roll >= this->defenseRating ? 1 : 0;
 }
+
+bool Unit::operator==(Unit u) {
+    return this->movementRange == u.movementRange
+        && this->attackRating  == u.attackRating
+        && this->defenseRating == u.defenseRating
+        && this->supplyCost    == u.supplyCost;
+}

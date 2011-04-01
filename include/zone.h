@@ -12,8 +12,7 @@ class Zone {
         zoneType type;
         power nativePower;
         power controllingPower; 
-        vector<Unit> test;
-        Unit* occupyingUnits;
+        vector<Unit> occupyingUnits;
         int* neighboringZones;
 
 
@@ -21,13 +20,13 @@ class Zone {
     // The empty constructor is to get the test fixture running
     // Trying to pass parameters to the declaration gave compile-time errors
     public: Zone(); 
-    public: Zone(Unit*, int*, int, zoneType, power, power);
+    public: Zone(vector<Unit>, int*, int, zoneType, power, power);
 
     // Public Interface
     public:
         // Getters
         int getSupplyValue();
-        Unit* getOccupyingUnits();
+        vector<Unit> getOccupyingUnits();
         int* getNeighboringZones();
         zoneType getZoneType();
         power getNativePower();
@@ -35,7 +34,7 @@ class Zone {
 
     public:
         int addOccupyingUnits( Unit* );
-        int setOccupyingUnits();
+        int setOccupyingUnits( Unit* );
 };
 
 #endif

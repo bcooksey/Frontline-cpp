@@ -19,9 +19,12 @@ class Unit {
         int getDefenseRating();
         int getSupplyCost();
 
-        // Other
+        // Actions
         int attack(int);
         int defend(int);
+
+        // Operator overloading
+        bool operator==(Unit);
 };
 
 #endif

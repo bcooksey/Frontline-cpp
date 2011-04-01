@@ -2,7 +2,7 @@
 
 // Constructor
 Zone::Zone() {}
-Zone::Zone(Unit *occupyingUnits, int *neighboringZones, int supplyValue, zoneType type, power nativePower, power controllingPower) {
+Zone::Zone(vector<Unit> occupyingUnits, int *neighboringZones, int supplyValue, zoneType type, power nativePower, power controllingPower) {
     this->occupyingUnits = occupyingUnits;
     this->neighboringZones = neighboringZones;
     this->supplyValue = supplyValue;
@@ -13,20 +13,24 @@ Zone::Zone(Unit *occupyingUnits, int *neighboringZones, int supplyValue, zoneTyp
 
 // Getters
 int Zone::getSupplyValue() { return supplyValue; }
-Unit* Zone::getOccupyingUnits() { return occupyingUnits; }
+vector<Unit> Zone::getOccupyingUnits() { return occupyingUnits; }
 int* Zone::getNeighboringZones() { return neighboringZones; }
 zoneType Zone::getZoneType() { return type; }
 power Zone::getNativePower() { return nativePower; }
 power Zone::getControllingPower() { return controllingPower; }
 
 int Zone::addOccupyingUnits( Unit *newUnits ) {
-//    int bytes = sizeof(Unit);
-//    int currentSize = sizeof(occupyingUnits) / bytes;
-//    int additionalSize = sizeof(newUnits) / bytes;
-//    Unit* newArray = new Unit [ currentSize + additionalSize ];
-//    newArray = this->occupyingUnits;
 
-    test.push_back( newUnits[0] );
-//    newArray
+    occupyingUnits.push_back( newUnits[0] );
+    return 1;
+}
+
+int Zone::setOccupyingUnits( Unit *newUnits ) {
+
+    // Declare a new vector because the old one may way too large
+    vector<Unit> newOccupyingUnits;
+    newOccupyingUnits.push_back( newUnits[0] );
+
+    this->occupyingUnits = newOccupyingUnits;
     return 1;
 }
