@@ -33,18 +33,29 @@ TEST_F(ZoneTest, UnitSetting) {
     Unit u2(2, 2, 2, 2); 
 
     // Add an initial unit
-    z1.addOccupyingUnits( &u1 );
+    z1.addOccupyingUnit( u1 );
     vector<Unit> gotUnits = z1.getOccupyingUnits();
     EXPECT_EQ( true, u1 == gotUnits.front() );
 
-    // Add another
-    z1.addOccupyingUnits( &u2 );
+    // Add another unit
+    z1.addOccupyingUnit( u2 );
     gotUnits = z1.getOccupyingUnits();
     EXPECT_EQ( (unsigned)2, gotUnits.size() ); 
 
-    // Setting should override any existing units
-    z1.setOccupyingUnits( &u2 );
+    // Setting units should override any existing units
+    vector<Unit> newOccupyingUnits;
+    newOccupyingUnits.push_back( u2 );
+    z1.setOccupyingUnits( newOccupyingUnits );
     gotUnits = z1.getOccupyingUnits();
     EXPECT_EQ( (unsigned)1, gotUnits.size() ); 
     EXPECT_EQ( true, u2 == gotUnits.front() );
+
+    // Should be able to add multiple units
+    newOccupyingUnits.push_back( u1 );
+    z1.addOccupyingUnits( newOccupyingUnits );
+    gotUnits = z1.getOccupyingUnits();
+    EXPECT_EQ( (unsigned)3, gotUnits.size() );
+    EXPECT_EQ( true, u2 == gotUnits.begin()[0] );
+    EXPECT_EQ( true, u2 == gotUnits.begin()[1] );
+    EXPECT_EQ( true, u1 == gotUnits.begin()[2] );
 }

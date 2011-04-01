@@ -33,8 +33,9 @@ class Zone {
         power getControllingPower();
 
     public:
-        int addOccupyingUnits( Unit* );
-        int setOccupyingUnits( Unit* );
+        int addOccupyingUnit( Unit );
+        int addOccupyingUnits( vector<Unit> );
+        int setOccupyingUnits( vector<Unit> );
 };
 
 #endif

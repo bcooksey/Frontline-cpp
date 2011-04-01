@@ -19,18 +19,20 @@ zoneType Zone::getZoneType() { return type; }
 power Zone::getNativePower() { return nativePower; }
 power Zone::getControllingPower() { return controllingPower; }
 
-int Zone::addOccupyingUnits( Unit *newUnits ) {
-
-    occupyingUnits.push_back( newUnits[0] );
+int Zone::addOccupyingUnit( Unit newUnit ) {
+    occupyingUnits.push_back( newUnit );
     return 1;
 }
 
-int Zone::setOccupyingUnits( Unit *newUnits ) {
+int Zone::addOccupyingUnits( vector<Unit> newUnits ) {
+    unsigned i = 0;
+    while( i < newUnits.size() ) {
+        occupyingUnits.push_back( newUnits.begin()[i++] );
+    }
+    return 1;
+}
 
-    // Declare a new vector because the old one may way too large
-    vector<Unit> newOccupyingUnits;
-    newOccupyingUnits.push_back( newUnits[0] );
-
-    this->occupyingUnits = newOccupyingUnits;
+int Zone::setOccupyingUnits( vector<Unit> newOccupyingUnits ) {
+    occupyingUnits = newOccupyingUnits;
     return 1;
 }
